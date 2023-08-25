@@ -80,27 +80,19 @@ Beograd, \@date
 \fontsize{14pt}{16.8pt}\selectfont
 Kandidat: \textbf{\@author}
 
-\bigskip
-\bigskip
-\bigskip
+\vspace{36pt}
 
 Broj indeksa: \textbf{\@indeks}
 
-\bigskip
-\bigskip
-\bigskip
+\vspace{36pt}
 
 Studijski program: \textbf{\@studijskiProgram}
 
-\bigskip
-\bigskip
-\bigskip
+\vspace{36pt}
 
 Tema: \textbf{\@title}
 
-\bigskip
-\bigskip
-\bigskip
+\vspace{36pt}
 
 Osnovni zadaci:
 \begin{enumerate}
