@@ -1,19 +1,10 @@
-% Пример функционалног програмирања Веб апликације у програмском језику Elm
-% Код ментора: др Перица Штрбац, дипл. инж.
-
-% Основни задаци завршног рада:
-% 1. Концепти функционалног програмирања.
-% 2. Опис програмског језика Elm.
-% 3. Имплементација Веб апликације у програмском језику Elm.
-
-% Предмет из кога се ради завршни рад: Функционално програмирање
-
 \documentclass{viser-thesis}
 
 \author{Mateja Marić}
 \indeks{NRT-12/19}
-\sprogram{Nove računarske tehnologije}
+\studijskiProgram{Nove računarske tehnologije}
 \mentor{Dr Perica Štrbac}
+\predmet{Funkcionalno programiranje}
 \title{Primer funkcionalnog programiranja Veb aplikacija u programskom jeziku Elm}
 \date{septembar 2023.}
 \prviZadatak{Koncepti funkcionalnog programiranja}
@@ -23,11 +14,20 @@
 \begin{document}
 
 \maketitle
+\pagenumbering{Roman}
 \infopage
+{
+\pagestyle{plain}
 \tableofcontents
 \newpage
+\pagestyle{fancy}% Turn on the style (for header and footer)
+}
+
+\pagenumbering{arabic}% Arabic page numbers (and reset to 1)
 
 \section{Prva sekcija}
+Knjiga \textcite{feldman2020elm} je fantasticna!
+U funkcionalnom programiranju se cesto koristi flatMap\index{flatMap}, sto je do jaja! \parencite{feldman2020elm}
 \newpage
 \subsection{Prva sekcija prva podsekcija}
 \newpage
@@ -70,5 +70,11 @@
 \subsection{Treca sekcija treca podsekcija}
 \newpage
 \subsubsection{Podpodsekcija}
+\newpage
+
+\printindex
+\newpage
+
+\printbibliography[heading=bibintoc]
 
 \end{document}

@@ -2,22 +2,53 @@
 
 \LoadClass[12pt]{article}
 
-\RequirePackage[margin=2.5cm]{geometry}
+\RequirePackage[a4paper,margin=2.5cm,headheight=1.5cm]{geometry}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[serbian]{babel}% For language support
 \RequirePackage{graphicx}% For images
 \RequirePackage{mathptmx}% For font similar to Times New Roman
-\RequirePackage{tabularx}
+\RequirePackage{tabularx}% More flexible tables
+\RequirePackage{tocloft}% For table of contents formatting
+\RequirePackage{titlesec}% For section title formatting
+\RequirePackage{fancyhdr}% For headers and footers
+\RequirePackage[backend=biber]{biblatex}% Bibliography support
+\RequirePackage{csquotes}% For better integration between bable and biblatex
+\RequirePackage{imakeidx}% Index support
+\RequirePackage[hidelinks]{hyperref}% Adds supports for links (and makes table of contents clickable)
 
 \newcommand{\indeks}[1]{\def\@indeks{#1}}
-\newcommand{\sprogram}[1]{\def\@sprogram{#1}}
+\newcommand{\studijskiProgram}[1]{\def\@studijskiProgram{#1}}
 \newcommand{\mentor}[1]{\def\@mentor{#1}}
+\newcommand{\predmet}[1]{\def\@predmet{#1}}
 \newcommand{\prviZadatak}[1]{\def\@prviZadatak{#1}}
 \newcommand{\drugiZadatak}[1]{\def\@drugiZadatak{#1}}
 \newcommand{\treciZadatak}[1]{\def\@treciZadatak{#1}}
 
+%\renewcommand{\cftdot}{\_}
+% Setting space between dots for every section type
+\renewcommand{\cftsecdotsep}{1}
+\renewcommand{\cftsubsecdotsep}{1}
+\renewcommand{\cftsubsubsecdotsep}{1}
+% Adding a dot after the last number of every section type
+\renewcommand{\cftsecaftersnum}{.}%
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsubsubsecaftersnum}{.}
+
+\titlelabel{\thetitle.\quad}% Add dot after sub/sub/section number
+
+\fancyhf{}% Clear the header and footer
+\fancyhead[R]{\textit{\@author, \@predmet}}
+\fancyfoot[C]{\thepage}% Set the center of the footer to be the page number
+\pagestyle{fancy}% Turn on the style (for header and footer)
+
+\addbibresource{literatura.bib}
+
+\makeindex[columns=2,intoc,options= -s index_style.ist]
+\indexsetup{firstpagestyle=fancy}
+
 \renewcommand{\maketitle}{
+\thispagestyle{empty}
 \begin{center}
 \fontsize{16pt}{21.6pt}\selectfont
 \MakeUppercase{visoka škola elektrotehnike i računarstva strukovnih studija}
@@ -44,6 +75,7 @@ Beograd, \@date
 }
 
 \newcommand{\infopage}{
+\thispagestyle{plain}
 \begin{flushleft}
 \fontsize{14pt}{16.8pt}\selectfont
 Kandidat: \textbf{\@author}
@@ -58,7 +90,7 @@ Broj indeksa: \textbf{\@indeks}
 \bigskip
 \bigskip
 
-Studijski program: \textbf{\@sprogram}
+Studijski program: \textbf{\@studijskiProgram}
 
 \bigskip
 \bigskip
