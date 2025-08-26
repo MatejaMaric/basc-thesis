@@ -6,7 +6,7 @@
 \mentor{Dr Perica Štrbac}
 \predmet{Funkcionalno programiranje}
 \title{Primer funkcionalnog programiranja Veb aplikacija u programskom jeziku Elm}
-\date{septembar 2023.}
+\date{septembar 2025.}
 \prviZadatak{Koncepti funkcionalnog programiranja}
 \drugiZadatak{Opis programskog jezika Elm}
 \treciZadatak{Implementacija Veb aplikacija u programskom jeziku Elm}
@@ -25,24 +25,111 @@
 
 \pagenumbering{arabic}% Arabic page numbers (and reset to 1)
 
-\section{Prva sekcija}
+\section{Uvodna reč autora}
+\newpage
+
+\section{Koncepti funkcionalnog programiranja}
 Knjiga \textcite{feldman2020elm} je fantasticna!
 U funkcionalnom programiranju se cesto koristi flatMap\index{flatMap}, sto je do jaja! \parencite{feldman2020elm}
 \newpage
-\subsection{Prva sekcija prva podsekcija}
-\newpage
-\subsubsection{Podpodsekcija}
-\newpage
-\subsection{Prva sekcija druga podsekcija}
-\newpage
-\subsubsection{Podpodsekcija}
-\newpage
-\subsection{Prva sekcija treca podsekcija}
-\newpage
-\subsubsection{Podpodsekcija}
+
+\subsection{Core Principles}
+
+\subsubsection{Immutability}
+
+Data structures cannot be changed once created. Updates create new versions instead.
+
+\subsubsection{First-class functions}
+
+Functions are treated as values: they can be passed as arguments, returned, or stored in data structures.
+
+\subsubsection{Higher-order functions}
+
+Functions that take other functions as arguments or return them.
+
+\subsubsection{No side effects}
+
+Functions do not alter external state (no mutation of variables, I/O, or global state inside function logic).
+
+\subsubsection{Referential transparency}
+
+An expression can be replaced by its value without changing the program’s behavior.
+
+\subsubsection{Declarative style}
+
+Programs describe *what* to compute, not *how* to compute it step by step.
+
 \newpage
 
-\section{Druga sekcija}
+\subsection{Functional Abstractions}
+
+\subsubsection{Pure functions}
+
+Output depends only on input, with no hidden state or external dependencies.
+
+\subsubsection{Recursion instead of loops}
+
+Iteration is achieved by recursive functions, since mutable state and loop counters are avoided.
+
+\subsubsection{Lazy evaluation}
+
+Values are computed only when needed (common in purely functional languages like Haskell).
+
+\subsubsection{Pattern matching}
+
+Directly destructuring and handling different data shapes (like algebraic data types).
+
+\subsubsection{Type systems and algebraic data types (ADTs)}
+
+Strong, expressive type systems with `sum types` (variants) and `product types` (records/tuples).
+
+\subsubsection{Currying and partial application}
+
+Functions naturally take one argument; multi-argument functions are built from single-argument ones.
+
+\subsubsection{Function composition}
+
+Building complex functions by combining smaller ones.
+
+\newpage
+
+\subsection{Managing Effects in PFP}
+
+\subsubsection{Monads}
+
+Structures to model sequential computations and manage effects (e.g., `Maybe`, `IO`, `State`).
+
+\subsubsection{Functors and Applicatives}
+
+Abstractions for mapping and combining computations in a pure way.
+
+\subsubsection{Persistent data structures}
+
+Efficient immutable collections that share structure between versions.
+
+\subsubsection{Controlled side effects via purity}
+
+Side effects (I/O, randomness, state) are modeled explicitly, not hidden inside functions.
+
+\newpage
+
+\subsection{Conceptual Benefits}
+
+\subsubsection{Equational reasoning}
+
+Programs can be reasoned about like algebraic equations due to referential transparency.
+
+\subsubsection{Parallelism and concurrency safety}
+
+No shared mutable state → easier to parallelize computations without race conditions.
+
+\subsubsection{Determinism}
+
+Same inputs always give the same outputs.
+
+\newpage
+
+\section{Opis programskog jezika Elm}
 \newpage
 \subsection{Druga sekcija prva podsekcija}
 \newpage
@@ -57,7 +144,7 @@ U funkcionalnom programiranju se cesto koristi flatMap\index{flatMap}, sto je do
 \subsubsection{Podpodsekcija}
 \newpage
 
-\section{Treca sekcija}
+\section{Implementacija Veb aplikacija u programskom jeziku Elm}
 \newpage
 \subsection{Treca sekcija prva podsekcija}
 \newpage
