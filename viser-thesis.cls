@@ -16,6 +16,8 @@
 \RequirePackage{csquotes}% For better integration between bable and biblatex
 \RequirePackage{imakeidx}% Index support
 \RequirePackage[hidelinks]{hyperref}% Adds supports for links (and makes table of contents clickable)
+\RequirePackage{listings}% For showing code snippets and source code files
+\RequirePackage{xcolor}% For defining colors to be used
 
 \newcommand{\indeks}[1]{\def\@indeks{#1}}
 \newcommand{\studijskiProgram}[1]{\def\@studijskiProgram{#1}}
@@ -41,6 +43,25 @@
 \fancyhead[R]{\textit{\@author, \@predmet}}
 \fancyfoot[C]{\thepage}% Set the center of the footer to be the page number
 \pagestyle{fancy}% Turn on the style (for header and footer)
+
+\definecolor{backcolour}{rgb}{0.9,0.9,0.9}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 \addbibresource{literatura.bib}
 
